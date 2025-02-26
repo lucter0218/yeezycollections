@@ -55,7 +55,7 @@ Yeezy HD-01 'White So Help Me God',https://yeezy.com/cdn/shop/files/hd-06-white-
 Yeezy HD-01 'Charcoal So Help Me God',new-cursrc="https://yeezy.com/cdn/shop/files/grey_e99983fe-6ffc-481b-b9e8-26ffedca1ace.png
 Yeezy HD-01 'Monochrome So Help Me God',https://parisaint.com/cdn/shop/files/SO_HELP_ME_GOD_ALL_DAY_HOODIE_2_1200x1200.jpg
 Yeezy FP-01 'White',https://yeezy.com/cdn/shop/files/white-1.png
-Yeezy FP-01 'Mocha',https://yzy-sply.com/cdn/shop/files/ts-01-oldgrey-1-2_617a5e53-a413-4a87-ad8a-05863b6755dd.png
+Yeezy FP-01 'Mocha',
 Yeezy FP-01 'Charcoal',https://yeezy.com/cdn/shop/files/bnlack.png
 Yeezy HD-01 'White Crescent',https://yeezy.com/cdn/shop/files/hd-01-white-2-3.png
 Yeezy HD-01 'Mocha Crescent',https://yeezy.com/cdn/shop/files/hd-01-grey-2-3.png
