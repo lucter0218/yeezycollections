@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YEEZY COLLECTIONS</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .grid-container {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .grid {
+            display: grid;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            background-color: #ffffff;
+        }
+        .grid.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .grid.hide {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        .item {
+            position: relative;
+            background-color: rgba(211, 211, 211, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .item-text {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 10px; /* 텍스트 크기를 작게 조정 */
+            text-align: center;
+            padding: 2px 0;
+        }
+        .text-button {
+            display: inline;
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .text-button:focus {
+            outline: none;
+        }
+        .text-input {
+            width: 40px;
+            border: none;
+            background: none;
+            color: inherit;
+            text-align: center;
+            font: inherit;
+        }
+        .text-input:focus {
+            outline: none;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .product-grid {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 100px);
+            gap: 15px;
+            background-color: #ffffff;
+        }
+        #search-input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+    border: none; /* 테두리 제거 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    font-family: inherit; /* 사이트 폰트와 동일하게 설정 */
+    font-size: 14px; /* 크기도 조정 가능 */
+    background: none; /* 배경 없애기 */
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>YEEZY COLLECTIONS</h1>
+    <div class="controls">
+        <input type="text" id="search-input" placeholder="SEARCH PRODUCTS" oninput="filterProducts()">
+        <div>
+            <span>GRID SIZE </span>
+            <input type="number" id="rows" class="text-input" min="1" max="10" value="3"> x
+            <input type="number" id="cols" class="text-input" min="1" max="10" value="3">
+            <button class="text-button" onclick="generateGrid()">GENERATE</button>
+        </div>
+    </div>
+    <div class="grid-container" id="grid-container">
+        <div class="grid" id="grid"></div>
+    </div>
+    <div class="controls">
+        <button class="text-button hidden" id="reset-button" onclick="resetGrid()">RESET</button>
+        <button class="text-button hidden" id="save-button" onclick="saveTopster()">SAVE</button>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+
+    <script>
+        let products = [];
+
+        async function loadProducts() {
+            const response = await fetch('products.txt'); 
+            const text = await response.text();
+            products = text.split('\n').map(line => {
+                const [name, url] = line.split(',');
+                return { name, url };
+            });
+            displayProducts(products);
+        }
+
+        function displayProducts(productsToDisplay) {
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = ''; // Clear existing products
+            productsToDisplay.forEach(product => {
+                const item = document.createElement('div');
+                item.className = 'item';
+                item.draggable = true;
+                item.ondragstart = (e) => {
+                    e.dataTransfer.setData('text/plain', JSON.stringify(product));
+                };
+                item.innerHTML = `<img src="${product.url}" alt="${product.name}"><div class="item-text">${product.name}</div>`;
+                productGrid.appendChild(item);
+            });
+        }
+
+        function filterProducts() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm));
+            displayProducts(filteredProducts);
+        }
+
+        function generateGrid() {
+            const rows = document.getElementById('rows').value;
+            const cols = document.getElementById('cols').value;
+            const gridContainer = document.getElementById('grid-container');
+            const grid = document.getElementById('grid');
+            const resetButton = document.getElementById('reset-button');
+            const saveButton = document.getElementById('save-button');
+
+            grid.innerHTML = '';
+            grid.style.gridTemplateColumns = `repeat(${cols}, 100px)`;
+            grid.style.gridTemplateRows = `repeat(${rows}, 100px)`;
+            grid.classList.remove('show');
+            grid.classList.remove('hide');
+            resetButton.classList.remove('hidden');
+            saveButton.classList.remove('hidden');
+            gridContainer.style.maxHeight = '0';
+
+            setTimeout(() => {
+                for (let i = 0; i < rows * cols; i++) {
+                    const item = document.createElement('div');
+                    item.className = 'item';
+                    item.ondrop = handleDrop;
+                    item.ondragover = (e) => e.preventDefault();
+                    grid.appendChild(item);
+                }
+                grid.classList.add('show');
+                gridContainer.style.maxHeight = '1000px';
+            }, 200);
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const product = JSON.parse(e.dataTransfer.getData('text/plain'));
+            if (this.innerHTML === "") {
+                this.innerHTML = `<img src="${product.url}" alt="${product.name}"><div class="item-text">${product.name}</div>`;
+            }
+        }
+
+        function resetGrid() {
+            const gridContainer = document.getElementById('grid-container');
+            const grid = document.getElementById('grid');
+            const resetButton = document.getElementById('reset-button');
+            const saveButton = document.getElementById('save-button');
+
+            grid.classList.add('hide');
+
+            setTimeout(() => {
+                grid.innerHTML = '';
+                gridContainer.style.maxHeight = '0';
+                resetButton.classList.add('hidden');
+                saveButton.classList.add('hidden');
+                grid.classList.remove('hide');
+            }, 500);
+        }
+
+        function saveTopster() {
+            const gridContainer = document.getElementById('grid-container');
+            const saveButton = document.getElementById('save-button');
+            const resetButton = document.getElementById('reset-button');
+
+            saveButton.style.display = 'none';
+            resetButton.style.display = 'none';
+
+            html2canvas(gridContainer, { useCORS: true }).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'yeezy.png';
+                link.click();
+
+                saveButton.style.display = 'inline';
+                resetButton.style.display = 'inline';
+            });
+        }
+
+        loadProducts();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
