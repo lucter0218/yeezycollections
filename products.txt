@@ -20,8 +20,8 @@ Yeezy SP-06 'White',https://yzy-sply.com/cdn/shop/files/sp-06-white-1-2_555f6d56
 Yeezy SP-06 'Mocha',https://yzy-sply.com/cdn/shop/files/SP-06G.jpg
 Yeezy SP-06 'Charcoal',https://yzy-sply.com/cdn/shop/files/SP-06B.jpg
 Yeezy SK-01 'White',https://yzy-sply.com/cdn/shop/files/sk-01-white-2.png
-Yeezy SK-01 'Mocha',https://yzy-sply.com/cdn/shop/files/SK-01G.jpg
-Yeezy SK-01 'Charcoal',https://yzy-sply.com/cdn/shop/files/SK-01B.jpg
+Yeezy SK-01 'Mocha',https://yzy-sply.com/cdn/shop/files/19_SK-01_ea536387-4d5f-4b96-ba48-03541752c20c.jpg
+Yeezy SK-01 'Charcoal',https://yzy-sply.com/cdn/shop/files/19_SK-01_fddb90a0-688e-4910-8e59-ac9fdc779c9e.jpg
 Yeezy SL-01 'White',https://yzy-sply.com/cdn/shop/files/SL-01-WHT-1.jpg
 Yeezy SL-01 'Mocha',https://yzy-sply.com/cdn/shop/files/SL-01-GRY-1.jpg
 Yeezy SL-01 'Charcoal',https://yzy-sply.com/cdn/shop/files/SLPR-B-SIDE-lighter.jpg
@@ -46,9 +46,26 @@ Yeezy SP-01 'Charcoal Blank', https://yzy-sply.com/cdn/shop/files/SP-01B0.jpg
 Yeezy SP-06 'White Blank', https://yzy-sply.com/cdn/shop/files/SP-06W0.jpg
 Yeezy SP-06 'Mocha Blank', https://yzy-sply.com/cdn/shop/files/SP-06G0.jpg
 Yeezy SP-06 'Charcoal Blank', https://yzy-sply.com/cdn/shop/files/SP-06B0.jpg
-Yeezy SK-01 'White Blank', https://yzy-sply.com/cdn/shop/files/SK-01W0.jpg
-Yeezy SK-01 'Mocha Blank', https://yzy-sply.com/cdn/shop/files/SK-01G0.jpg
-Yeezy SK-01 'Charcoal Blank', https://yzy-sply.com/cdn/shop/files/SK-01B0.jpg
+Yeezy SK-01 'White Blank', https://yzy-sply.com/cdn/shop/files/09_SK-01.jpg
+Yeezy SK-01 'Mocha Blank', https://yzy-sply.com/cdn/shop/files/09_SK-01_e68e7520-0955-4da6-9048-f75599514e57.jpg
+Yeezy SK-01 'Charcoal Blank', https://yzy-sply.com/cdn/shop/files/09_SK-01_175e46c3-8c59-4285-86ed-9572e19c1c31.jpg
+Yeezy WLM-01 'White',https://yeezy.com/cdn/shop/files/wlm-white-2.png
+Yeezy WLM-02 'Black',https://yeezy.com/cdn/shop/files/wlm-2.png
+Yeezy HD-01 'White So Help Me God',https://yeezy.com/cdn/shop/files/hd-06-white-2-4.jpg
+Yeezy HD-01 'Charcoal So Help Me God',new-cursrc="https://yeezy.com/cdn/shop/files/grey_e99983fe-6ffc-481b-b9e8-26ffedca1ace.png
+Yeezy HD-01 'Monochrome So Help Me God',https://parisaint.com/cdn/shop/files/SO_HELP_ME_GOD_ALL_DAY_HOODIE_2_1200x1200.jpg
+Yeezy FP-01 'White',https://yeezy.com/cdn/shop/files/white-1.png
+Yeezy FP-01 'Mocha',https://yzy-sply.com/cdn/shop/files/ts-01-oldgrey-1-2_617a5e53-a413-4a87-ad8a-05863b6755dd.png
+Yeezy FP-01 'Charcoal',https://yeezy.com/cdn/shop/files/bnlack.png
+Yeezy HD-01 'White Crescent',https://yeezy.com/cdn/shop/files/hd-01-white-2-3.png
+Yeezy HD-01 'Mocha Crescent',https://yeezy.com/cdn/shop/files/hd-01-grey-2-3.png
+Yeezy HD-01 'Charcoal Crescent',
+Yeezy HD-01 'Bully',https://images.stockx.com/images/Yeezy-Bully-HD-01-Hoodie-Black.jpg
+Yeezy SP-06 'Bully',https://images.stockx.com/images/Yeezy-Bully-SP-06-Sweatpant-Black.jpg
+Kanye West Bully T 'White',https://images.stockx.com/images/Kanye-West-Bully-Tee-White.jpg
+Kanye West Bully T 'Black',https://images.stockx.com/images/Yeezy-Bully-TS-02-T-shirt-Black.jpg
+Kanye West Bully Longsleeve 'White',https://images.stockx.com/images/Kanye-West-Bully-Longsleeve-White.jpg
+Kanye West Bully Longsleeve 'Black',https://images.stockx.com/images/Kanye-West-Bully-Longsleeve-Black.jpg
 Yeezy Gosha Black Dog Hoodie 'Heather Grey',https://archive.is/qFsIw/466ef308867306d0dbb1ce63e9447fc19703bc9e.webp
 Yeezy Gosha Black Dog Hoodie 'Black',https://www.kickgame.co.uk/cdn/shop/files/YZY-GBD-HOOD-BLK.png
 Yeezy Gosha Black Dog T-shirt 'Heather Grey',https://archive.is/qFsIw/efd4e12e5fed723fe8eb6065591e95af54aa0a31.webp
